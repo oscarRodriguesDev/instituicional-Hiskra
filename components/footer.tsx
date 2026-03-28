@@ -32,8 +32,18 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <footer 
+      className="relative border-t border-gray-100"
+      style={{
+        backgroundImage: 'url(/footer-background.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Overlay para melhor legibilidade */}
+      <div className="absolute inset-0 bg-white/95" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -140,6 +150,7 @@ export function Footer() {
             ))}
           </motion.div>
         </motion.div>
+      </div>
       </div>
     </footer>
   )
