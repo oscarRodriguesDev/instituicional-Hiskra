@@ -127,7 +127,7 @@ export function Footer() {
             variants={itemVariants}
             className="text-sm text-gray-600 mb-4 md:mb-0"
           >
-            © 2024 Hiskra Solutions & Technologies. Todos os direitos reservados.
+            © 2024 Hiskra S&T. Todos os direitos reservados.
           </motion.p>
 
           {/* Social Links */}

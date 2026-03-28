@@ -28,25 +28,25 @@ export function Institutional() {
     {
       icon: Target,
       title: 'Missão',
-      description: 'Transformar a complexidade em simplicidade através de soluções tecnológicas inovadoras, capacitando empresas a alcançarem seu máximo potencial em um mundo digital em constante evolução.',
+      description: 'Transformar os sonhos de nossos clientes em projetos estruturados e, a partir deles, desenvolver produtos que gerem valor real para pessoas e negócios.',
       gradient: 'from-yellow-400 to-orange-500',
     },
     {
       icon: Eye,
       title: 'Visão',
-      description: 'Ser a referência global em excelência tecnológica, reconhecida pela entrega de soluções que combinam inovação, segurança e impacto transformador nos negócios de nossos clientes.',
+      description: 'Criar produtos que transformem positivamente a vida das pessoas, desenvolvidos de forma colaborativa entre colaboradores, clientes e parceiros, com uma abordagem de pessoas para pessoas.',
       gradient: 'from-orange-500 to-red-500',
     },
     {
       icon: Heart,
       title: 'Valores',
-      description: 'Inovação contínua, integridade absoluta, excelência técnica, respeito à diversidade, e compromisso com o desenvolvimento sustentável. Acreditamos que tecnologia deve servir à humanidade.',
+      description: 'Potencial, Igualdade, Inovação, Humanidade, Valorização, Respeito, Equidade e Reconhecimento. Acreditamos que toda ideia tem valor e que as pessoas devem ser sempre respeitadas e valorizadas.',
       gradient: 'from-red-500 to-pink-500',
     },
     {
       icon: Lightbulb,
       title: 'Propósito',
-      description: 'Capacitar organizações a liderar no futuro digital, fornecendo tecnologia que não apenas resolve problemas complexos, mas também gera impacto social positivo e sustentável.',
+      description: 'Desenvolver soluções tecnológicas com impacto local, estadual, nacional e internacional. Construir um ambiente onde colaboradores, parceiros e clientes sejam valorizados genuinamente.',
       gradient: 'from-pink-500 to-purple-500',
     },
   ]
@@ -123,45 +123,74 @@ export function Institutional() {
           })}
         </motion.div>
 
-        {/* Values Highlight Section */}
+        {/* Core Values Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           variants={containerVariants}
           viewport={{ once: true }}
-          className="mt-20 sm:mt-28 p-8 sm:p-12 rounded-2xl border border-gray-100 bg-gradient-to-br from-gray-50 to-white"
+          className="mt-20 sm:mt-28"
         >
           <motion.h3
             variants={itemVariants}
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-balance"
+            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-balance"
           >
-            Os Três Pilares da Hiskra
+            Nossos Oito Valores Fundamentais
           </motion.h3>
 
           <motion.div
             variants={containerVariants}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
-              { name: 'Potencial', description: 'Desenvolvemos o máximo potencial de cada projeto e equipe' },
-              { name: 'Inovação', description: 'Inovação contínua é o coração de tudo que fazemos' },
-              { name: 'Respeito', description: 'Valorizamos as pessoas, a diversidade e a sustentabilidade' },
-            ].map((pillar, index) => (
+              { 
+                name: 'Potencial', 
+                description: 'Toda ideia tem valor e pode surgir em qualquer nível da organização.' 
+              },
+              { 
+                name: 'Igualdade', 
+                description: 'Todas as pessoas são tratadas com igualdade, equidade e respeito mútuo.' 
+              },
+              { 
+                name: 'Inovação', 
+                description: 'Nasce da compreensão de necessidades reais das pessoas.' 
+              },
+              { 
+                name: 'Humanidade', 
+                description: 'Produtos existem para melhorar a experiência das pessoas de forma prática.' 
+              },
+              { 
+                name: 'Valorização', 
+                description: 'Colaboradores são reconhecidos e respeitados para entregar seu melhor trabalho.' 
+              },
+              { 
+                name: 'Respeito', 
+                description: 'Nenhuma pessoa é tratada como superior a outra na organização.' 
+              },
+              { 
+                name: 'Equidade', 
+                description: 'Ideias são avaliadas com critérios objetivos, sem influência de hierarquia.' 
+              },
+              { 
+                name: 'Reconhecimento', 
+                description: 'Acompanhamos resultados e promovemos crescimento de forma proativa.' 
+              },
+            ].map((value, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="text-center"
+                className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all duration-300"
               >
-                <div className="mb-4">
-                  <p className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
-                    {index + 1}
-                  </p>
+                <div className="mb-3">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white font-bold text-lg">{index + 1}</span>
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                  {pillar.name}
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                  {value.name}
                 </h4>
-                <p className="text-gray-600">
-                  {pillar.description}
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {value.description}
                 </p>
               </motion.div>
             ))}
