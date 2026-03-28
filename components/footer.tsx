@@ -151,7 +151,6 @@ export function Footer() {
           </motion.div>
         </motion.div>
       </div>
-      </div>
     </footer>
   )
 }
