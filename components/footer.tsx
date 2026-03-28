@@ -40,7 +40,6 @@ export function Footer() {
         backgroundPosition: 'center',
       }}
     >
-      {/* Overlay para melhor legibilidade */}
       <div className="absolute inset-0 bg-white/95" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
@@ -51,7 +50,6 @@ export function Footer() {
           viewport={{ once: true }}
           className="grid md:grid-cols-4 gap-8 mb-12"
         >
-          {/* Brand Section */}
           <motion.div variants={itemVariants} className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Image
@@ -68,7 +66,6 @@ export function Footer() {
             </p>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div variants={itemVariants}>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Produto</h3>
             <ul className="space-y-3">
@@ -82,7 +79,6 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Company */}
           <motion.div variants={itemVariants}>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Empresa</h3>
             <ul className="space-y-3">
@@ -96,7 +92,6 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Legal */}
           <motion.div variants={itemVariants}>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Legal</h3>
             <ul className="space-y-3">
@@ -111,10 +106,8 @@ export function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Divider */}
         <div className="border-t border-gray-100 pt-8 mb-8" />
 
-        {/* Bottom Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -122,7 +115,6 @@ export function Footer() {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row items-center justify-between"
         >
-          {/* Copyright */}
           <motion.p
             variants={itemVariants}
             className="text-sm text-gray-600 mb-4 md:mb-0"
@@ -130,7 +122,6 @@ export function Footer() {
             © 2024 Hiskra S&T. Todos os direitos reservados.
           </motion.p>
 
-          {/* Social Links */}
           <motion.div
             variants={containerVariants}
             className="flex items-center gap-6"
