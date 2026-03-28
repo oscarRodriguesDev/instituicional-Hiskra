@@ -26,6 +26,7 @@ export function Navbar() {
               width={48}
               height={48}
               className="h-12 w-auto"
+              priority
             />
           </motion.div>
 

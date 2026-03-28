@@ -25,18 +25,29 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16">
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      style={{
+        backgroundImage: 'url(/hero-background.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Overlay escuro para melhor contraste do texto */}
+      <div className="absolute inset-0 bg-black/40" />
+      
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
+          animate={{ opacity: 0.05 }}
           transition={{ duration: 1 }}
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
+          animate={{ opacity: 0.05 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl"
         />
@@ -53,19 +64,19 @@ export function Hero() {
           variants={itemVariants}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-balance mb-6"
         >
-          <span className="text-gray-900">Inovação que</span>
+          <span className="text-white drop-shadow-lg">Inovação que</span>
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400">
             Impulsiona
           </span>
           <br />
-          <span className="text-gray-900">o Futuro</span>
+          <span className="text-white drop-shadow-lg">o Futuro</span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto text-pretty"
+          className="text-xl sm:text-2xl text-white drop-shadow-md mb-8 max-w-2xl mx-auto text-pretty"
         >
           Solutions & Technologies para transformar sua visão em realidade
         </motion.p>
@@ -86,7 +97,7 @@ export function Hero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+            className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300"
           >
             Saiba Mais
           </motion.button>
@@ -97,13 +108,13 @@ export function Hero() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
       >
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center drop-shadow-lg">
           <motion.div
             animate={{ y: [0, 4, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mt-2"
+            className="w-1.5 h-3 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full mt-2"
           />
         </div>
       </motion.div>
