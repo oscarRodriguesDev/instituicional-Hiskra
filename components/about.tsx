@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -102,31 +103,13 @@ export function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 via-red-500 via-purple-500 to-cyan-500 rounded-2xl opacity-10 blur-2xl" />
             
             <div className="absolute inset-6 bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
-              <div className="h-full flex items-center justify-center">
-                <motion.div
-                  animate={{
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                  className="w-40 h-40 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-purple-500 opacity-20"
-                />
-                
-                <motion.div
-                  animate={{
-                    rotate: [360, 0],
-                  }}
-                  transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                  className="absolute w-24 h-24 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 to-cyan-500 opacity-30"
-                />
-              </div>
+              <Image
+                src="/about-target.jpg"
+                alt="Alvo estratégico Hiskra - Transformar complexidade em simplicidade"
+                fill
+                className="object-cover w-full h-full"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </motion.div>
         </motion.div>
