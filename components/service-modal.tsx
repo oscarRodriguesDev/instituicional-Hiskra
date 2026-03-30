@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 
@@ -135,13 +136,15 @@ export function ServiceModal({
                 )}
 
                 {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-full py-3 px-6 rounded-lg bg-gradient-to-r ${gradient} text-white font-semibold transition-all duration-300`}
-                >
-                  Solicitar Orçamento
-                </motion.button>
+                <Link href="/contato" className="block">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-full py-3 px-6 rounded-lg bg-gradient-to-r ${gradient} text-white font-semibold transition-all duration-300 text-center`}
+                  >
+                    Solicitar Orcamento
+                  </motion.div>
+                </Link>
               </div>
             </div>
           </motion.div>
