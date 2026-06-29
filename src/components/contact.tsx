@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Send, Phone, Mail, MessageCircle } from 'lucide-react'
+import { Phone, Mail, MessageCircle } from 'lucide-react'
 
 export function Contact() {
   const { ref, inView } = useInView({
@@ -37,10 +37,6 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const text = encodeURIComponent(
-      `Olá! Meu nome é ${name}.\n\n${message}\n\n(Email: ${email})`
-    )
-    window.open(`https://wa.me/5527988991663?text=${text}`, '_blank')
   }
 
   return (
@@ -139,8 +135,7 @@ export function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center gap-2"
               >
-                Enviar pelo WhatsApp
-                <Send className="w-4 h-4" />
+                Enviar Mensagem
               </motion.button>
             </form>
           </motion.div>
