@@ -30,11 +30,22 @@
   - Alterado: `src/app/page.tsx` (import e adição antes do Footer)
   - Conteúdo:
     - Formulário com campos: nome, email, textarea
-    - Botão "Enviar pelo WhatsApp" que redireciona para `wa.me/5527988991663` com mensagem pré-preenchida
+    - Botão "Enviar Mensagem" (submit sem ação por enquanto, envio será tratado depois)
     - Cards de contato: WhatsApp (27) 98899-1663, Email oscar.gst.projetos@gmail.com, Telefone
     - `id="contato"` para rolagem a partir do navbar
     - Animações: Framer Motion com `useInView`, stagger nos itens, hover scale nos cards
     - Estilo consistente com o resto do projeto (gradiente yellow→orange→red, bordas, sombras)
+  - Fix (b7b22f0): Removido redirect para WhatsApp no formulário, botão alterado para "Enviar Mensagem"
+  - Build: ✅ `npm run build` passou com sucesso
+
+- **CRIADA SEÇÃO "TRABALHE CONOSCO" | AUTOR: VIBECODE**
+  - Pedido #004: "Criar seção trabalhe conosco com vagas e link cadastre-se"
+  - Componente criado: `src/components/careers.tsx`
+  - Alterado: `src/app/page.tsx` (import e adição antes do Contact)
+  - Conteúdo:
+    - 3 vagas mockadas: Dev Full-Stack Pleno, Analista de Inovação, Consultor de Proteção de Dados
+    - Cada vaga com ícone Briefcase, título e link "cadastre-se"
+    - Estilo simples e limpo, sem rebusco
   - Build: ✅ `npm run build` passou com sucesso
 
 ---
