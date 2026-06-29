@@ -1,15 +1,27 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import Image from 'next/image'
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setScrolled(latest > 50)
+  })
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100"
+      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100/50'
+          : 'bg-white/80 backdrop-blur-md border-b border-gray-100'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -62,7 +74,7 @@ export function Navbar() {
               backgroundClip: 'padding-box, border-box',
             }}
           >
-            Começar Agora
+            <span className="relative z-10 text-black"> Começar Agora</span>
           </motion.button>
         </div>
       </div>

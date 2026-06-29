@@ -1,22 +1,65 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.04, duration: 0.5, ease: 'easeOut' },
+  }),
+}
+
+function AnimatedText({ text, className, startDelay = 0 }: { text: string; className?: string; startDelay?: number }) {
+  return (
+    <span className={className}>
+      {text.split('').map((char, i) => (
+        <motion.span
+          key={`${char}-${i}`}
+          custom={i + startDelay}
+          variants={letterVariants}
+          initial="hidden"
+          animate="visible"
+          className="inline-block"
+          style={{ whiteSpace: char === ' ' ? 'pre' : undefined }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </span>
+  )
+}
+
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.4, 0.7])
+  const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.5])
+  const orbOpacity = useTransform(scrollYProgress, [0, 0.8], [0.05, 0])
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.4,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -25,52 +68,69 @@ export function Hero() {
   }
 
   return (
-    <section 
+    <section
+      ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
-      style={{
-        backgroundImage: 'url(/hero-background.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
     >
+      {/* Parallax Background */}
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/hero-background.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          y: bgY,
+        }}
+      />
+
       {/* Overlay escuro para melhor contraste do texto */}
-      <div className="absolute inset-0 bg-black/40" />
-      
+      <motion.div
+        className="absolute inset-0 bg-black"
+        style={{ opacity: overlayOpacity }}
+      />
+
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.05 }}
           transition={{ duration: 1 }}
+          style={{ scale: orbScale, opacity: orbOpacity }}
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.05 }}
           transition={{ duration: 1, delay: 0.2 }}
+          style={{ scale: orbScale, opacity: orbOpacity }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full blur-3xl"
         />
       </div>
 
+      {/* Parallax Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        style={{ y: contentY }}
         className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
-        {/* Main Title */}
+        {/* Main Title with Letter-by-Letter Reveal */}
         <motion.h1
           variants={itemVariants}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-balance mb-6"
         >
-          <span className="text-white drop-shadow-lg">Inovação que</span>
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400">
-            Impulsiona
+          <span className="text-white drop-shadow-lg">
+            <AnimatedText text="Inovação que" startDelay={0} />
           </span>
           <br />
-          <span className="text-white drop-shadow-lg">o Futuro</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400">
+            <AnimatedText text="Impulsiona" startDelay={12} />
+          </span>
+          <br />
+          <span className="text-white drop-shadow-lg">
+            <AnimatedText text="o Futuro" startDelay={22} />
+          </span>
         </motion.h1>
 
         {/* Subtitle */}

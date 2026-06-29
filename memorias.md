@@ -8,8 +8,27 @@
   - Mudança: Adicionado `<span className="relative z-10 text-black">` ao redor do texto "Começar Agora" no botão CTA do navbar. Provavelmente para corrigir problema de z-index onde o texto ficava atrás do gradiente/overlay do botão.
   - Status: Pendente de commit (não staged)
 
+- **ADICIONADAS 9 ANIMAÇÕES NA PÁGINA | AUTOR: VIBECODE**
+  - Pedido #002: "Preciso de mais animação na minha pagina"
+  - Animações implementadas:
+    1. **Parallax no Hero** — `useScroll`/`useTransform` do Framer Motion, fundo e conteúdo movem velocidades diferentes no scroll
+    2. **Contadores Animados** — Hook `useCountUp` custom, stats (100+, 50+, 15+) contam de 0 com easing cúbico
+    3. **Navbar Scroll-Aware** — Fundo muda de transparente para blur/sombra ao rolar >50px via `useMotionValueEvent`
+    4. **Text Reveal Letter-by-Letter** — Título do Hero anima caractere por caractere com delay staggered
+    5. **Hover Tilt/3D** — Cards de serviço têm perspective 3D com `useMotionValue`/`useSpring` seguindo o cursor
+    6. **Imagem About Hover** — Zoom 110% + overlay com gradiente ao passar o mouse
+    7. **Barra de Progresso** — Componente `ScrollProgress` fixo no topo com `useSpring` suavizado
+    8. **Transições entre Seções** — Services, Institutional e About envolvidos em `motion.div` com `whileInView`
+    9. **Botão Scroll-to-Top** — AnimatePresence + spring animation, aparece após 500px de scroll
+  - Arquivos modificados: `hero.tsx`, `navbar.tsx`, `about.tsx`, `services.tsx`, `page.tsx`
+  - Arquivos criados: `scroll-progress.tsx`, `scroll-to-top.tsx`, `use-count-up.ts`
+  - Build: ✅ `npm run build` passou com sucesso
+
 ---
 
 ## Decisões Técnicas
 
-_(nenhuma ainda)_
+- **Framer Motion como lib principal de animação** — Já estava no projeto, todas as novas animações usam ele
+- **`react-intersection-observer` mantido** — About e Services continuam usando, não quebrar compatibilidade
+- **`useMotionValueEvent` para navbar** — Mais performático que `useEffect` com scroll listener
+- **`useSpring` para scroll progress** — Suaviza a barra de progresso com física de mola

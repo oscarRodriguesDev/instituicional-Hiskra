@@ -3,6 +3,20 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useCountUp } from '@/hooks/use-count-up'
+
+function StatCounter({ end, suffix, label }: { end: number; suffix: string; label: string }) {
+  const { count, ref } = useCountUp(end, 2000)
+
+  return (
+    <div ref={ref} className="text-center">
+      <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-2">
+        {count}{suffix}
+      </div>
+      <p className="text-gray-600 text-sm">{label}</p>
+    </div>
+  )
+}
 
 export function About() {
   const { ref, inView } = useInView({
@@ -62,26 +76,11 @@ export function About() {
               Com mais de uma década de experiência, nossa equipe combina conhecimento profundo em tecnologia com uma compreensão genuína dos negócios de nossos clientes.
             </p>
 
-            {/* Stats */}
+            {/* Animated Stats */}
             <div className="grid grid-cols-3 gap-6 mb-8">
-              {[
-                { number: '100+', label: 'Projetos' },
-                { number: '50+', label: 'Clientes' },
-                { number: '15+', label: 'Anos' },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-2">
-                    {stat.number}
-                  </div>
-                  <p className="text-gray-600 text-sm">{stat.label}</p>
-                </motion.div>
-              ))}
+              <StatCounter end={100} suffix="+" label="Projetos" />
+              <StatCounter end={50} suffix="+" label="Clientes" />
+              <StatCounter end={15} suffix="+" label="Anos" />
             </div>
 
             <motion.button
@@ -93,7 +92,7 @@ export function About() {
             </motion.button>
           </motion.div>
 
-          {/* Right Content - Visual Element */}
+          {/* Right Content - Visual Element with Hover Effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -102,15 +101,25 @@ export function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 via-red-500 via-purple-500 to-cyan-500 rounded-2xl opacity-10 blur-2xl" />
             
-            <div className="absolute inset-6 bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="absolute inset-6 bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer group"
+            >
               <Image
                 src="/about-target.jpg"
                 alt="Alvo estratégico Hiskra - Transformar complexidade em simplicidade"
                 fill
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <p className="text-white font-semibold text-lg drop-shadow-lg">
+                  Conheça nossa história
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

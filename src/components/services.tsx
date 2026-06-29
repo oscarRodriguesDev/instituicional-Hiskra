@@ -1,10 +1,88 @@
 'use client'
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useRef } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { Code2, Lightbulb, Shield } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 import { ServiceModal } from './service-modal'
+
+function ServiceCard({ service, index, onClick }: { service: typeof services[0]; index: number; onClick: () => void }) {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
+  const rotateX = useSpring(useTransform(y, [-100, 100], [8, -8]), { stiffness: 300, damping: 30 })
+  const rotateY = useSpring(useTransform(x, [-100, 100], [-8, 8]), { stiffness: 300, damping: 30 })
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return
+    const rect = cardRef.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    x.set(e.clientX - centerX)
+    y.set(e.clientY - centerY)
+  }
+
+  const handleMouseLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
+
+  const Icon = service.icon
+
+  return (
+    <motion.div
+      ref={cardRef}
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: 'easeOut' },
+        },
+      }}
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: 1000 }}
+      className="group"
+    >
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        className="rounded-2xl bg-white border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 h-full"
+      >
+        {/* Icon Background */}
+        <div
+          className={`w-16 h-16 rounded-lg bg-gradient-to-r ${service.gradient} p-3.5 mb-6 group-hover:scale-110 transition-transform duration-300`}
+          style={{ transform: 'translateZ(20px)' }}
+        >
+          <Icon className="w-full h-full text-white" strokeWidth={1.5} />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ transform: 'translateZ(10px)' }}>
+          {service.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 leading-relaxed mb-6" style={{ transform: 'translateZ(5px)' }}>
+          {service.description}
+        </p>
+
+        {/* Learn More Button */}
+        <motion.button
+          onClick={onClick}
+          className="inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 font-semibold hover:gap-3 transition-all duration-300"
+          whileHover={{ x: 4 }}
+        >
+          Saiba mais
+          <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
+        </motion.button>
+      </motion.div>
+    </motion.div>
+  )
+}
 
 export function Services() {
   const [selectedService, setSelectedService] = useState<number | null>(null)
@@ -20,15 +98,6 @@ export function Services() {
       transition: {
         staggerChildren: 0.2,
       },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
     },
   }
 
@@ -121,44 +190,14 @@ export function Services() {
           animate={inView ? 'visible' : 'hidden'}
           className="grid md:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => {
-            const Icon = service.icon
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group rounded-2xl bg-white border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300"
-              >
-                {/* Icon Background */}
-                <div
-                  className={`w-16 h-16 rounded-lg bg-gradient-to-r ${service.gradient} p-3.5 mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <Icon className="w-full h-full text-white" strokeWidth={1.5} />
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-
-                {/* Learn More Button */}
-                <motion.button
-                  onClick={() => setSelectedService(index)}
-                  className="inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 font-semibold hover:gap-3 transition-all duration-300"
-                  whileHover={{ x: 4 }}
-                >
-                  Saiba mais
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
-                </motion.button>
-              </motion.div>
-            )
-          })}
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              service={service}
+              index={index}
+              onClick={() => setSelectedService(index)}
+            />
+          ))}
         </motion.div>
       </div>
 
