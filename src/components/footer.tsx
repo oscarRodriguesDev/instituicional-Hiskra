@@ -82,10 +82,15 @@ export function Footer() {
           <motion.div variants={itemVariants}>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Empresa</h3>
             <ul className="space-y-3">
-              {['Sobre', 'Blog', 'Carreiras', 'Contato'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-yellow-400 to-orange-500 transition-colors duration-300">
-                    {link}
+              {[
+                { label: 'Sobre', href: '#sobre' },
+                { label: 'Blog', href: '#' },
+                { label: 'Trabalhe Conosco', href: '#vagas' },
+                { label: 'Contato', href: '#contato' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-sm text-gray-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-yellow-400 to-orange-500 transition-colors duration-300">
+                    {link.label}
                   </a>
                 </li>
               ))}
