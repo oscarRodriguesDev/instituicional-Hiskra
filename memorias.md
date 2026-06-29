@@ -24,6 +24,19 @@
   - Arquivos criados: `scroll-progress.tsx`, `scroll-to-top.tsx`, `use-count-up.ts`
   - Build: ✅ `npm run build` passou com sucesso
 
+- **CRIADA SEÇÃO DE CONTATO | AUTOR: VIBECODE**
+  - Pedido #003: "Criar área de contato com formulário e informações"
+  - Componente criado: `src/components/contact.tsx`
+  - Alterado: `src/app/page.tsx` (import e adição antes do Footer)
+  - Conteúdo:
+    - Formulário com campos: nome, email, textarea
+    - Botão "Enviar pelo WhatsApp" que redireciona para `wa.me/5527988991663` com mensagem pré-preenchida
+    - Cards de contato: WhatsApp (27) 98899-1663, Email oscar.gst.projetos@gmail.com, Telefone
+    - `id="contato"` para rolagem a partir do navbar
+    - Animações: Framer Motion com `useInView`, stagger nos itens, hover scale nos cards
+    - Estilo consistente com o resto do projeto (gradiente yellow→orange→red, bordas, sombras)
+  - Build: ✅ `npm run build` passou com sucesso
+
 ---
 
 ## Decisões Técnicas

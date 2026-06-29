@@ -6,6 +6,7 @@ import { Hero } from '@/components/hero'
 import { Services } from '@/components/services'
 import { Institutional } from '@/components/institutional'
 import { About } from '@/components/about'
+import { Contact } from '@/components/contact'
 import { Footer } from '../components/footer'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { ScrollToTop } from '@/components/scroll-to-top'
@@ -48,6 +49,14 @@ export default function Home() {
         variants={sectionVariants}
       >
         <About />
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+        variants={sectionVariants}
+      >
+        <Contact />
       </motion.div>
       <Footer />
       <ScrollToTop />
