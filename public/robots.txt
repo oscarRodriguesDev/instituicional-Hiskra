@@ -30,4 +30,4 @@ Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 
-Sitemap: https://landing.hiskra.com.br/sitemap.xml
+Sitemap: https://hiskra.com.br/sitemap.xml

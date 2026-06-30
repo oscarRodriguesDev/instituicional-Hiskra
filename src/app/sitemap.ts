@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://landing.hiskra.com.br'
+  const baseUrl = 'https://hiskra.com.br'
 
   return [
     {

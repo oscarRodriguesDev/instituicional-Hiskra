@@ -1,6 +1,6 @@
 # Hiskra Solutions & Technologies — Conteúdo Completo do Site
 
-Este arquivo contém todo o texto exibido no site landing.hiskra.com.br, formatado para ser facilmente interpretado por modelos de linguagem e sistemas de IA.
+Este arquivo contém todo o texto exibido no site hiskra.com.br, formatado para ser facilmente interpretado por modelos de linguagem e sistemas de IA.
 
 ---
 
@@ -144,4 +144,4 @@ Vagas disponíveis:
 - **Setor:** Tecnologia da Informação
 - **Especialidades:** Desenvolvimento Full-Stack, Gestão de Inovação, Consultoria DPO e Proteção de Dados
 - **Localização:** Brasil
-- **Site:** https://landing.hiskra.com.br
+- **Site:** https://hiskra.com.br
