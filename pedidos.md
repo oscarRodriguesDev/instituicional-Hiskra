@@ -9,4 +9,5 @@
 | 005 | 2026-06-29 | Criar README em pt-br, humanizado e técnico | Concluído | fe6cdb9 |
 | 006 | 2026-06-29 | SEO completo para landing.hiskra.com.br | Concluído | e2795f6 |
 | 007 | 2026-06-29 | GEO completo para ser encontrado pelas principais IAs | Concluído | 09c28fb |
-| 008 | 2026-06-29 | Corrigir domínio de landing.hiskra.com.br para hiskra.com.br | Concluído | 21eee15 |
+| 008 | 2026-06-29 | Corrigir domínio de landing.hiskra.com.br para hiskra.com.br | Concluído | 21eee15 | e68f7a6, 2995b31 (fixes JSON-LD) |
+| 009 | 2026-06-29 | Criar template "definições SEO e GEO" para reutilização | Concluído | cbb4a23 |
