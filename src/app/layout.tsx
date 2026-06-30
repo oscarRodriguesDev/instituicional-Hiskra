@@ -100,14 +100,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const jsonLd = {
+  const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${baseUrl}#organization`,
     name: 'Hiskra Solutions & Technologies',
     url: baseUrl,
     logo: `${baseUrl}/logo-hiskra.png`,
     description:
-      'Desenvolvimento full-stack, gestão de inovação e consultoria de proteção de dados (LGPD/GDPR).',
+      'Empresa brasileira de tecnologia especializada em desenvolvimento full-stack, gestão de inovação e consultoria de proteção de dados (LGPD/GDPR).',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'BR',
@@ -121,12 +122,129 @@ export default function RootLayout({
     sameAs: [],
   }
 
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${baseUrl}#website`,
+    name: 'Hiskra Solutions & Technologies',
+    url: baseUrl,
+    description:
+      'Desenvolvimento full-stack, gestão de inovação e consultoria de proteção de dados (LGPD/GDPR).',
+    publisher: {
+      '@id': `${baseUrl}#organization`,
+    },
+    inLanguage: 'pt-BR',
+  }
+
+  const serviceSchemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Desenvolvimento Full-Stack',
+      provider: {
+        '@id': `${baseUrl}#organization`,
+      },
+      description:
+        'Soluções completas em desenvolvimento web e mobile: aplicações responsivas, APIs RESTful e GraphQL, apps mobile, integração com bancos SQL/NoSQL, arquiteturas escaláveis.',
+      areaServing: 'BR',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Tecnologias Full-Stack',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'React' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'Next.js' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'Node.js' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'TypeScript' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'PostgreSQL' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'MongoDB' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'Docker' } },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Gestão de Inovação',
+      provider: {
+        '@id': `${baseUrl}#organization`,
+      },
+      description:
+        'Diagnóstico de maturidade inovadora, identificação de oportunidades, estruturação de processos, mentoria de times, e implementação de projetos piloto e MVP.',
+      areaServing: 'BR',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Consultoria DPO e Proteção de Dados',
+      provider: {
+        '@id': `${baseUrl}#organization`,
+      },
+      description:
+        'Assessoria em conformidade com LGPD e GDPR, auditoria de segurança, elaboração de políticas, implementação de controles, e resposta a incidentes.',
+      areaServing: 'BR',
+    },
+  ]
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'O que é a Hiskra Solutions & Technologies?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A Hiskra é uma empresa brasileira de tecnologia especializada em desenvolvimento full-stack, gestão de inovação e consultoria de proteção de dados (LGPD/GDPR). Fundada em inovação e excelência técnica, transforma desafios complexos em soluções elegantes e escaláveis.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Quais serviços a Hiskra oferece?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A Hiskra oferece três serviços principais: Desenvolvimento Full-Stack (web, mobile, APIs), Gestão de Inovação (Design Thinking, Lean Startup, Agile), e Consultoria DPO e Proteção de Dados (LGPD, GDPR, ISO 27001).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Como entrar em contato com a Hiskra?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Você pode entrar em contato pelo WhatsApp (27) 98899-1663, pelo email oscar.gst.projetos@gmail.com, ou pelo formulário de contato no site.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Quais tecnologias a Hiskra utiliza?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A Hiskra utiliza React, Next.js, Node.js, TypeScript, PostgreSQL, MongoDB, Docker, LGPD, GDPR, ISO 27001, Design Thinking, Lean Startup, Agile e OKR.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'A Hiskra atende clientes de que regiões?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A Hiskra é uma empresa brasileira que atende clientes em todo o território nacional, com impacto local, estadual, nacional e internacional.',
+        },
+      },
+    ],
+  }
+
   return (
     <html lang="pt-BR">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              organizationSchema,
+              websiteSchema,
+              ...serviceSchemas,
+              faqSchema,
+            ]),
+          }}
         />
       </head>
       <body className="font-sans antialiased">

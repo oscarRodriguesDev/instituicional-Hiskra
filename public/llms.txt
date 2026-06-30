@@ -1,0 +1,45 @@
+# Hiskra Solutions & Technologies
+
+> Empresa brasileira de tecnologia especializada em desenvolvimento full-stack, gestão de inovação e consultoria de proteção de dados (LGPD/GDPR). Transformamos complexidade em simplicidade.
+
+## Sobre
+
+A Hiskra Solutions & Technologies é uma empresa fundada em inovação e excelência técnica, com mais de uma década de experiência. Somos especialistas em transformar desafios complexos em soluções elegantes e escaláveis para pessoas e negócios.
+
+## Serviços
+
+### Desenvolvimento Full-Stack
+Soluções completas em desenvolvimento web e mobile com tecnologias modernas. Inclui aplicações web responsivas, APIs RESTful e GraphQL, apps mobile nativos e cross-platform, integração com bancos SQL/NoSQL, e arquiteturas escaláveis e seguras. Tecnologias: React, Next.js, Node.js, TypeScript, PostgreSQL, MongoDB, Docker.
+
+### Gestão de Inovação
+Diagnóstico de maturidade inovadora, identificação de oportunidades, estruturação de processos inovadores, mentoria de times, e implementação de projetos piloto e MVP. Tecnologias: Design Thinking, Lean Startup, Agile, OKR, Inovação Aberta.
+
+### Consultoria DPO e Proteção de Dados
+Assessoria em conformidade com LGPD e GDPR, auditoria de segurança e privacidade, elaboração de políticas, implementação de controles técnicos, e resposta a incidentes. Tecnologias: LGPD, GDPR, ISO 27001, Criptografia, Audit Trails.
+
+## Identidade Institucional
+
+- **Missão:** Transformar os sonhos de nossos clientes em projetos estruturados e desenvolver produtos que gerem valor real para pessoas e negócios.
+- **Visão:** Criar produtos que transformem positivamente a vida das pessoas, desenvolvidos de forma colaborativa.
+- **Valores:** Potencial, Igualdade, Inovação, Humanidade, Valorização, Respeito, Equidade e Reconhecimento.
+- **Propósito:** Desenvolver soluções tecnológicas com impacto local, estadual, nacional e internacional.
+
+## Números
+
+- 100+ projetos entregues
+- 50+ clientes atendidos
+- 15+ anos de experiência
+
+## Contato
+
+- **WhatsApp:** (27) 98899-1663
+- **Email:** oscar.gst.projetos@gmail.com
+- **Site:** https://landing.hiskra.com.br
+
+## Localização
+
+Brasil
+
+## Tecnologias
+
+React, Next.js, Node.js, TypeScript, PostgreSQL, MongoDB, Docker, Tailwind CSS, Framer Motion, LGPD, GDPR, ISO 27001, Design Thinking, Lean Startup, Agile, OKR

@@ -1,0 +1,147 @@
+# Hiskra Solutions & Technologies — Conteúdo Completo do Site
+
+Este arquivo contém todo o texto exibido no site landing.hiskra.com.br, formatado para ser facilmente interpretado por modelos de linguagem e sistemas de IA.
+
+---
+
+## Hero (Página Principal)
+
+**Título:** Inovação que Impulsiona o Futuro
+
+**Subtítulo:** Solutions & Technologies para transformar sua visão em realidade
+
+---
+
+## Serviços
+
+### 1. Desenvolvimento Full-Stack
+
+Soluções completas em desenvolvimento web e mobile com as tecnologias mais modernas do mercado.
+
+**Detalhes:**
+- Desenvolvimento de aplicações web responsivas e de alto desempenho
+- Criação de APIs RESTful e GraphQL robustas
+- Desenvolvimento de aplicações mobile nativas e cross-platform
+- Integração com bancos de dados modernos (SQL e NoSQL)
+- Implementação de arquiteturas escaláveis e seguras
+
+**Benefícios:**
+- Soluções personalizadas para seus negócios
+- Código limpo e bem documentado
+- Suporte e manutenção contínua
+- Entrega em prazos estabelecidos
+
+**Tecnologias:** React, Next.js, Node.js, TypeScript, PostgreSQL, MongoDB, Docker
+
+---
+
+### 2. Gestão de Inovação
+
+Ajudamos sua empresa a identificar, desenvolver e implementar estratégias inovadoras.
+
+**Detalhes:**
+- Diagnóstico da maturidade inovadora da sua empresa
+- Identificação de oportunidades de inovação
+- Estruturação de processos inovadores e metodologias ágeis
+- Mentoria e capacitação de times de inovação
+- Implementação de projetos piloto e MVP
+
+**Benefícios:**
+- Aumento da competitividade no mercado
+- Geração de novos modelos de negócio
+- Engajamento e motivação de colaboradores
+- Redução de riscos em inovação
+
+**Tecnologias:** Design Thinking, Lean Startup, Agile, OKR, Inovação Aberta
+
+---
+
+### 3. Consultoria DPO e Proteção de Dados
+
+Conformidade com LGPD e GDPR. Proteja seus dados com nossas soluções especializadas.
+
+**Detalhes:**
+- Assessoria em conformidade com LGPD e GDPR
+- Auditoria de segurança e privacidade de dados
+- Elaboração de políticas e procedimentos de proteção de dados
+- Implementação de controles técnicos e operacionais
+- Resposta a incidentes de segurança e relatórios obrigatórios
+
+**Benefícios:**
+- Proteção contra multas e sanções legais
+- Confiança dos clientes e parceiros
+- Conformidade regulatória garantida
+- Redução de riscos cibernéticos
+
+**Tecnologias:** LGPD, GDPR, ISO 27001, Criptografia, Audit Trails
+
+---
+
+## Identidade Institucional
+
+### Missão
+Transformar os sonhos de nossos clientes em projetos estruturados e, a partir deles, desenvolver produtos que gerem valor real para pessoas e negócios.
+
+### Visão
+Criar produtos que transformem positivamente a vida das pessoas, desenvolvidos de forma colaborativa entre colaboradores, clientes e parceiros, com uma abordagem de pessoas para pessoas.
+
+### Valores
+Potencial, Igualdade, Inovação, Humanidade, Valorização, Respeito, Equidade e Reconhecimento. Acreditamos que toda ideia tem valor e que as pessoas devem ser sempre respeitadas e valorizadas.
+
+### Propósito
+Desenvolver soluções tecnológicas com impacto local, estadual, nacional e internacional. Construir um ambiente onde colaboradores, parceiros e clientes sejam valorizados genuinamente.
+
+---
+
+## Nossos Oito Valores Fundamentais
+
+1. **Potencial** — Toda ideia tem valor e pode surgir em qualquer nível da organização.
+2. **Igualdade** — Todas as pessoas são tratadas com igualdade, equidade e respeito mútuo.
+3. **Inovação** — Nasce da compreensão de necessidades reais das pessoas.
+4. **Humanidade** — Produtos existem para melhorar a experiência das pessoas de forma prática.
+5. **Valorização** — Colaboradores são reconhecidos e respeitados para entregar seu melhor trabalho.
+6. **Respeito** — Nenhuma pessoa é tratada como superior a outra na organização.
+7. **Equidade** — Ideias são avaliadas com critérios objetivos, sem influência de hierarquia.
+8. **Reconhecimento** — Acompanhamos resultados e promovemos crescimento de forma proativa.
+
+---
+
+## Sobre a Hiskra
+
+A Hiskra é uma empresa fundada em inovação e excelência técnica. Somos especialistas em transformar desafios complexos em soluções elegantes e escaláveis.
+
+Com mais de uma década de experiência, nossa equipe combina conhecimento profundo em tecnologia com uma compreensão genuína dos negócios de nossos clientes.
+
+**Números:**
+- 100+ Projetos
+- 50+ Clientes
+- 15+ Anos de Experiência
+
+---
+
+## Trabalhe Conosco
+
+Vagas disponíveis:
+- Desenvolvedor Full-Stack Pleno
+- Analista de Inovação
+- Consultor de Proteção de Dados
+
+---
+
+## Contato
+
+**WhatsApp:** (27) 98899-1663
+**Email:** oscar.gst.projetos@gmail.com
+**Telefone:** (27) 98899-1663
+
+**Formulário de contato:** Campos nome, email e mensagem.
+
+---
+
+## Empresa
+
+- **Nome:** Hiskra Solutions & Technologies
+- **Setor:** Tecnologia da Informação
+- **Especialidades:** Desenvolvimento Full-Stack, Gestão de Inovação, Consultoria DPO e Proteção de Dados
+- **Localização:** Brasil
+- **Site:** https://landing.hiskra.com.br
