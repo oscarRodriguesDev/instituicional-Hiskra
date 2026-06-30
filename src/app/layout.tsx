@@ -111,6 +111,10 @@ export default function RootLayout({
       'Empresa brasileira de tecnologia especializada em desenvolvimento full-stack, gestão de inovação e consultoria de proteção de dados (LGPD/GDPR).',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Avenida August Saint Hilaire, 12',
+      addressLocality: 'Serra',
+      addressRegion: 'ES',
+      postalCode: '29173-040',
       addressCountry: 'BR',
     },
     contactPoint: {
