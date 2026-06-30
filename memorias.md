@@ -46,7 +46,15 @@
     - 3 vagas mockadas: Dev Full-Stack Pleno, Analista de Inovação, Consultor de Proteção de Dados
     - Cada vaga com ícone Briefcase, título e link "cadastre-se"
     - Estilo simples e limpo, sem rebusco
+  - Fix (8e19880): "Trabalhe Conosco" movido para opção no footer (coluna Empresa), link aponta para `#vagas`
   - Build: ✅ `npm run build` passou com sucesso
+
+- **README REESCRITO EM PT-BR | AUTOR: VIBECODE**
+  - Pedido #005: "Criar readme bem escrito, humanizado e técnico"
+  - Arquivo: `README.md` (substituído o original gerado pelo v0)
+  - Conteúdo: descrição, stack, como rodar, estrutura, funcionalidades, deploy, colaboração, contato
+  - Idioma: Português do Brasil
+  - Commit na branch `main` (fe6cdb9)
 
 ---
 

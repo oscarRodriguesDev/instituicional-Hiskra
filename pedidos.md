@@ -5,4 +5,5 @@
 | 001 | 2026-06-29 | Configurar sistema de controle colaborativo (memorias.md, checkpoints.md, pedidos.md, ideias.md, preferencias_do_usuario.md) | Concluído | da921be |
 | 002 | 2026-06-29 | Adicionar mais animações na página (9 animações solicitadas) | Concluído | 9dca65b |
 | 003 | 2026-06-29 | Criar seção de contato com formulário (nome, email, textarea) e informações de contato (WhatsApp, email) | Concluído | 1927cab | b7b22f0 (fix: formulario sem envio) |
-| 004 | 2026-06-29 | Criar seção "Trabalhe Conosco" com 3 vagas mockadas e link "cadastre-se" | Concluído | 7ee585e |
+| 004 | 2026-06-29 | Criar seção "Trabalhe Conosco" com 3 vagas mockadas e link "cadastre-se" | Concluído | 7ee585e | 8e19880 (fix: link no footer) |
+| 005 | 2026-06-29 | Criar README em pt-br, humanizado e técnico | Concluído | fe6cdb9 |
