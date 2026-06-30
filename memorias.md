@@ -65,6 +65,15 @@
   - Canonical: `https://landing.hiskra.com.br`
   - Build: ✅ `npm run build` passou com sucesso
 
+- **GEO COMPLETO PARA AI CRAWLERS | AUTOR: VIBECODE**
+  - Pedido #007: "GEO bem escrito para ser encontrado pelas principais IAs"
+  - Arquivos criados/modificados:
+    - `public/llms.txt`: Resumo da empresa, serviços, identidade, números, contato, tecnologias — formato padronizado para AI crawlers
+    - `public/llms-full.txt`: Conteúdo completo do site (hero, serviços, identidade, valores, sobre, contato) — texto puro para LLMs
+    - `public/robots.txt`: Permissões explícitas para GPTBot, ChatGPT-User, Google-Extended, CCBot, anthropic-ai, ClaudeBot, PerplexityBot, YouBot
+    - `src/app/layout.tsx`: JSON-LD expandido com 5 schemas (Organization, WebSite, 3x Service, FAQPage com 5 P&Rs)
+  - Build: ✅ `npm run build` passou com sucesso
+
 ---
 
 ## Decisões Técnicas
