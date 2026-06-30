@@ -7,3 +7,4 @@
 | 003 | 2026-06-29 | Criar seção de contato com formulário (nome, email, textarea) e informações de contato (WhatsApp, email) | Concluído | 1927cab | b7b22f0 (fix: formulario sem envio) |
 | 004 | 2026-06-29 | Criar seção "Trabalhe Conosco" com 3 vagas mockadas e link "cadastre-se" | Concluído | 7ee585e | 8e19880 (fix: link no footer) |
 | 005 | 2026-06-29 | Criar README em pt-br, humanizado e técnico | Concluído | fe6cdb9 |
+| 006 | 2026-06-29 | SEO completo para landing.hiskra.com.br | Concluído | e2795f6 |

@@ -56,6 +56,15 @@
   - Idioma: Português do Brasil
   - Commit na branch `main` (fe6cdb9)
 
+- **SEO COMPLETO IMPLEMENTADO | AUTOR: VIBECODE**
+  - Pedido #006: "SEO bem construído, site hospedado em landing.hiskra.com.br"
+  - Arquivos modificados/criados:
+    - `src/app/layout.tsx`: metadataBase, title template, description, 12 keywords, OpenGraph, Twitter Card, robots, canonical, JSON-LD (schema.org Organization)
+    - `src/app/sitemap.ts`: sitemap dinâmico gerado pelo Next.js (rota `/sitemap.xml`)
+    - `public/robots.txt`: Allow all + referência ao sitemap
+  - Canonical: `https://landing.hiskra.com.br`
+  - Build: ✅ `npm run build` passou com sucesso
+
 ---
 
 ## Decisões Técnicas
@@ -64,3 +73,4 @@
 - **`react-intersection-observer` mantido** — About e Services continuam usando, não quebrar compatibilidade
 - **`useMotionValueEvent` para navbar** — Mais performático que `useEffect` com scroll listener
 - **`useSpring` para scroll progress** — Suaviza a barra de progresso com física de mola
+- **JSON-LD via `dangerouslySetInnerHTML`** — Next.js App Router não oferece nativamente, inserido no `<head>` do layout
