@@ -74,6 +74,13 @@
     - `src/app/layout.tsx`: JSON-LD expandido com 5 schemas (Organization, WebSite, 3x Service, FAQPage com 5 P&Rs)
   - Build: ✅ `npm run build` passou com sucesso
 
+- **CORRIGIDO DOMÍNIO PARA hiskra.com.br | AUTOR: VIBECODE**
+  - Pedido #008: "A página está disponível em hiskra.com.br, corrija no SEO e GEO"
+  - 9 ocorrências corrigidas de `landing.hiskra.com.br` → `hiskra.com.br` em 7 arquivos
+  - Arquivos: layout.tsx, sitemap.ts, robots.txt, llms.txt, llms-full.txt, pedidos.md, memorias.md
+  - Canonical agora aponta para `https://hiskra.com.br`
+  - Build: ✅ `npm run build` passou com sucesso
+
 ---
 
 ## Decisões Técnicas
